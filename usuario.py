@@ -25,6 +25,10 @@ class Cliente(Usuario):
     def __str__(self):
         return "Cliente %s (%s): %s" % (self.nome, self.email, self.telefone)
 
+class Doutor(Usuario):
+    def __init__(self, nome, email, telefone):
+        Usuario.__init__(self, nome, email. telefone)
+
 
 def test_usuario():
     usuario = Usuario("Icaro", "icaro@aeroli.to", "51 81963836")
@@ -33,5 +37,5 @@ def test_usuario():
     print cliente
 
     print cliente.animais
-    cliente.adicionar_animal(Animal())
-    print cliente.animais
+    cliente.adicionar_animal(Animal("fred", 1, "vira-lata"))
+    print cliente
