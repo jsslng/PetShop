@@ -25,9 +25,32 @@ class Cliente(Usuario):
     def __str__(self):
         return "Cliente %s (%s): %s" % (self.nome, self.email, self.telefone)
 
+
 class Doutor(Usuario):
     def __init__(self, nome, email, telefone):
         Usuario.__init__(self, nome, email. telefone)
+        self.animais = []
+
+    def adicionar_animal(self, animal):
+        self.animais.append(animal)
+
+    def __str__(self):
+        return "Doutor %s (%s): %s" % (self.nome, self.email, self.telefone)
+
+
+class Funcionario(Usuario):
+    def __init__(self, nome, email, telefone):
+        Usuario.__init__(self, nome, email, telefone)
+        self.animais = []
+
+    def adicionar_animal(self, animal):
+        self.animais.append(animal)
+
+    def __str__(self):
+        return "Funcionario %s (%s): %s" % (self.nome, self.email, self.telefone)
+
+
+
 
 
 def test_usuario():
