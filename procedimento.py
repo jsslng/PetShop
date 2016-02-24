@@ -1,26 +1,36 @@
+# -*- coding: utf-8 -*-
+
+
 from datetime import date
 from usuario import *
 
 
-class Procedimento():
+class Procedimento:
     def __init__(self, data, nome, custo):
         self.data = data
         self.nome = nome
         self.custo = custo
+
     def __str__(self):
-        return "Data: %s, Nome do procedimento: %s, Custo: %dR$ " %(self.data, self.nome, self.custo)
+        return "Data: %s, Nome do procedimento: %s, Custo: %dR$ " % (self.data, self.nome, self.custo)
 
 
 class Banho(Procedimento):
+    # TODO: Passar o funcionario por parâmetro do construtor ao invés de criar
     def __init__(self, data, nome, custo):
         Procedimento.__init__(self, data, nome, custo)
         self.funcionario = Funcionario(data, nome, custo)
 
+        # TODO: sobrescrever o `__str__`
+
 
 class Cirurgia(Procedimento):
+    # TODO: Passar o doutor por parâmetro do construtor ao invés de criar
     def __init__(self, data, nome, custo):
         Procedimento.__init__(self, data, nome, custo)
         self.doutor = Doutor(data, nome, custo)
+
+        # TODO: sobrescrever o `__str__`
 
 
 def test_procedimento():

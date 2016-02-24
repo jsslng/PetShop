@@ -28,7 +28,8 @@ class Cliente(Usuario):
 
 class Doutor(Usuario):
     def __init__(self, nome, email, telefone):
-        Usuario.__init__(self, nome, email. telefone)
+        # TODO: Opa, aquele probleminha aqui \/
+        Usuario.__init__(self, nome, email.telefone)
         self.animais = []
 
     def adicionar_animal(self, animal):
@@ -50,9 +51,6 @@ class Funcionario(Usuario):
         return "Funcionario %s (%s): %s" % (self.nome, self.email, self.telefone)
 
 
-
-
-
 def test_usuario():
     usuario = Usuario("Icaro", "icaro@aeroli.to", "51 81963836")
     print usuario
@@ -62,3 +60,6 @@ def test_usuario():
     print cliente.animais
     cliente.adicionar_animal(Animal("fred", 1, "vira-lata"))
     print cliente
+
+    doutor = Doutor("Doctor", "dr@dr.com", "51 2838282")
+    print doutor
