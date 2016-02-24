@@ -28,8 +28,7 @@ class Cliente(Usuario):
 
 class Doutor(Usuario):
     def __init__(self, nome, email, telefone):
-        # TODO: Opa, aquele probleminha aqui \/
-        Usuario.__init__(self, nome, email.telefone)
+        Usuario.__init__(self, nome, email, telefone)
         self.animais = []
 
     def adicionar_animal(self, animal):

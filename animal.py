@@ -7,7 +7,8 @@ class Animal:
         self.idade = idade
         self.raca = raca
 
-    # TODO: definir a funcao `agir` na classe pai pra poder sobrescrever nas filhos
+    def agir(self):
+        print "faz coisas animalisticas"
 
     def __str__(self):
         return "Animal: %s, %d, %s" % (self.nome, self.idade, self.raca)
@@ -17,21 +18,24 @@ class Cachorro(Animal):
     def agir(self):
         print "WOOF! WOOF!"
 
-        # TODO: sobrescrever o `__str__`
+    def __str__(self):
+        return "Cachorro: %s, %d, %s" % (self.nome, self.idade, self.raca)
 
 
 class Gato(Animal):
     def agir(self):
         print "MEOW... MEOW..."
 
-        # TODO: sobrescrever o `__str__`
+    def __str__(self):
+        return "Gato: %s, %d, %s" % (self.nome, self.idade, self.raca)
 
 
 class Passaro(Animal):
     def agir(self):
         print "~~singing bird~~"
 
-        # TODO: sobrescrever o `__str__`
+    def __str__(self):
+        return "Passaro: %s, %d, %s" % (self.nome, self.idade, self.raca)
 
 
 def test_animal():

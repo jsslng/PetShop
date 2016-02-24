@@ -16,23 +16,27 @@ class Procedimento:
 
 
 class Banho(Procedimento):
-    # TODO: Passar o funcionario por parâmetro do construtor ao invés de criar
-    def __init__(self, data, nome, custo):
+    def __init__(self, data, nome, custo, funcionario):
         Procedimento.__init__(self, data, nome, custo)
-        self.funcionario = Funcionario(data, nome, custo)
+        self.funcionario = funcionario
 
-        # TODO: sobrescrever o `__str__`
+    def __str__(self):
+        return "Data: %s, Nome do procedimento: %s, Custo: %dR$, Profissional responsavel: %s " % (self.data, self.nome,
+                                                                                                   self.custo, self.funcionario.nome)
 
 
 class Cirurgia(Procedimento):
-    # TODO: Passar o doutor por parâmetro do construtor ao invés de criar
-    def __init__(self, data, nome, custo):
+    def __init__(self, data, nome, custo, doutor):
         Procedimento.__init__(self, data, nome, custo)
-        self.doutor = Doutor(data, nome, custo)
+        self.doutor = doutor
 
-        # TODO: sobrescrever o `__str__`
+    def __str__(self):
+        return "Data: %s, Nome do procedimento: %s, Custo: %dR$, Profissional responsavel: %s " % (self.data, self.nome,
+                                                                                                   self.custo, self.doutor.nome)
+
 
 
 def test_procedimento():
-    proc = Banho(str(date.today()), "Cirurgia", 450.00)
+    doutor = Doutor("Julio", "blablalbablalb", 376538745)
+    proc = Banho(str(date.today()), "Cirurgia", 450.00, doutor)
     print proc
