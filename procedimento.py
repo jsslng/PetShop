@@ -16,24 +16,25 @@ class Procedimento:
 
 
 class Banho(Procedimento):
-    def __init__(self, data, nome, custo, funcionario):
-        Procedimento.__init__(self, data, nome, custo)
+    def __init__(self, data, nome, custo, funcionario, animal):
+        Procedimento.__init__(self, data, nome, custo, id)
         self.funcionario = funcionario
+        self.animal = animal
 
     def __str__(self):
         return "Data: %s, Nome do procedimento: %s, Custo: %dR$, Profissional responsavel: %s " % (self.data, self.nome,
                                                                                                    self.custo, self.funcionario.nome)
 
 
-class Cirurgia(Procedimento):
-    def __init__(self, data, nome, custo, doutor):
+class Consulta(Procedimento):
+    def __init__(self, data, nome, custo, doutor, animal):
         Procedimento.__init__(self, data, nome, custo)
         self.doutor = doutor
+        self.animal = animal
 
     def __str__(self):
-        return "Data: %s, Nome do procedimento: %s, Custo: %dR$, Profissional responsavel: %s " % (self.data, self.nome,
+        return "Data: %s, Nome do procedimento: %s, Custo: %sR$, Profissional responsavel: %s " % (self.data, self.nome,
                                                                                                    self.custo, self.doutor.nome)
-
 
 
 def test_procedimento():

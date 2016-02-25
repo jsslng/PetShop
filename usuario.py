@@ -1,9 +1,6 @@
 # -*- coding: utf-8 -*-
 
 
-from animal import Animal
-
-
 class Usuario:
     def __init__(self, nome, email, telefone):
         self.nome = nome
@@ -19,9 +16,6 @@ class Cliente(Usuario):
         Usuario.__init__(self, nome, email, telefone)
         self.animais = []
 
-    def adicionar_animal(self, animal):
-        self.animais.append(animal)
-
     def __str__(self):
         return "Cliente %s (%s): %s" % (self.nome, self.email, self.telefone)
 
@@ -30,9 +24,22 @@ class Doutor(Usuario):
     def __init__(self, nome, email, telefone):
         Usuario.__init__(self, nome, email, telefone)
         self.animais = []
+        self.cirurgias = []
+        self.consultas = []
 
-    def adicionar_animal(self, animal):
-        self.animais.append(animal)
+    def marcar_consulta(self, animal, data):
+        from procedimento import Consulta
+        consulta = Consulta(data, "Consulta", "50,00", self, animal)
+        self.consultas.append(consulta)
+
+    def marcar_cirurgia(self, animal, data):
+        from procedimento import Consulta
+        cirurgia = Consulta(data, "Cirurgia", "200,00", self, animal)
+        self.cirurgias.append(cirurgia)
+
+
+
+    # criar lista com cirurgias no doutor
 
     def __str__(self):
         return "Doutor %s (%s): %s" % (self.nome, self.email, self.telefone)
@@ -42,6 +49,12 @@ class Funcionario(Usuario):
     def __init__(self, nome, email, telefone):
         Usuario.__init__(self, nome, email, telefone)
         self.animais = []
+        self.banho_tosas = []
+
+    def marcar_banho_tosa(self, animal, data):
+        from procedimento import Banho
+        banho_tosa = Banho(data, "Banho e/ou Tosa", "200,00", self, animal)
+        self.banho_tosas.append(banho_tosa)
 
     def adicionar_animal(self, animal):
         self.animais.append(animal)
@@ -51,14 +64,4 @@ class Funcionario(Usuario):
 
 
 def test_usuario():
-    usuario = Usuario("Icaro", "icaro@aeroli.to", "51 81963836")
-    print usuario
-    cliente = Cliente("Igor", "igor@aeroli.to", "51 82399192")
-    print cliente
-
-    print cliente.animais
-    cliente.adicionar_animal(Animal("fred", 1, "vira-lata"))
-    print cliente
-
-    doutor = Doutor("Doctor", "dr@dr.com", "51 2838282")
-    print doutor
+    pass

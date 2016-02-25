@@ -11,7 +11,7 @@ class Animal:
         print "faz coisas animalisticas"
 
     def __str__(self):
-        return "Animal: %s, %d, %s" % (self.nome, self.idade, self.raca)
+        return "Animal: %s, %s, %s" % (self.nome, self.idade, self.raca)
 
 
 class Cachorro(Animal):
@@ -19,7 +19,7 @@ class Cachorro(Animal):
         print "WOOF! WOOF!"
 
     def __str__(self):
-        return "Cachorro: %s, %d, %s" % (self.nome, self.idade, self.raca)
+        return "Cachorro: %s, %s, %s" % (self.nome, self.idade, self.raca)
 
 
 class Gato(Animal):
@@ -27,7 +27,7 @@ class Gato(Animal):
         print "MEOW... MEOW..."
 
     def __str__(self):
-        return "Gato: %s, %d, %s" % (self.nome, self.idade, self.raca)
+        return "Gato: %s, %s, %s" % (self.nome, self.idade, self.raca)
 
 
 class Passaro(Animal):
@@ -35,21 +35,21 @@ class Passaro(Animal):
         print "~~singing bird~~"
 
     def __str__(self):
-        return "Passaro: %s, %d, %s" % (self.nome, self.idade, self.raca)
+        return "Passaro: %s, %s, %s" % (self.nome, self.idade, self.raca)
 
 
 def test_animal():
-    animal = Animal("Fred", 1, "Vira Lata")
+    animal = Animal("Fred", "1", "Vira Lata")
     print animal
 
 
 def test_cachorro():
-    cachorro = Cachorro("Bob", 3, "Pastor Alemao")
+    cachorro = Cachorro("Bob", "3", "Pastor Alemao")
     cachorro.agir()
 
 
 def test_gato():
-    gato = Gato("Jubs", 2, "Belga")
+    gato = Gato("Jubs", "2", "Belga")
     gato.agir()
 
 
